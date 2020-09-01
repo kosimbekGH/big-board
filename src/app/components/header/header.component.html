@@ -1,6 +1,5 @@
-
-
-<header class="d-flex justify-content-between py-3 ">
+<header class="header-bg">
+<div class=" container d-flex justify-content-between py-3">
 
   <div>
     <a href="/">Logo</a>
@@ -10,11 +9,15 @@
     Продовай и покупай быстро!
   </p>
 
-  <a routerLink="/personal-area">Личный кабинет</a>
-  <a routerLink="/login">Вход и регистрация</a>
-  <a routerLink="/favorite">
-   <span class="fa fa-star-o fa-2x"></span>
-  </a>
+  <span class=" header-text-color"
+        routerLink="/personal-area">Личный кабинет</span>
+
+  <span class=" text-decoration-none header-text-color"
+        routerLink="/login">Вход и регистрация</span>
+
+  <span class=" text-decoration-none header-text-color " routerLink="/favorite">
+   <span class="fa fa-star-o fa-2x favorite-hover"></span>
+  </span>
 
   <a routerLink="/new-ad">
   <button class="btn btn-danger">
@@ -23,4 +26,5 @@
   </button>
   </a>
 
+</div>
 </header>

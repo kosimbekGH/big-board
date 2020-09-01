@@ -1,0 +1,19 @@
+.header-text-color{
+  color: lightseagreen;
+  cursor: pointer;
+
+  &:focus-within {
+  color: #dc3545;
+}
+  &:focus{
+    border:none ;
+  }
+}
+.favorite-hover{
+  :hover{
+
+  }
+}
+.header-bg{
+  background-color: #f5f5f5 ;
+}
