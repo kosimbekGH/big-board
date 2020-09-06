@@ -16,6 +16,7 @@ import { FavoriteModule } from './pages/favorite/favorite.module';
 import { FavoriteComponent } from './pages/favorite/components/favorite/favorite.component';
 import { AdDetailComponent } from './pages/ad/components/ad-detail/ad-detail.component';
 import { AdFilterComponent } from './pages/ad/components/ad-filter/ad-filter.component';
+import { FooterComponent } from './components/footer/footer.component';
 
 const appRoutes: Routes = [
   {path: '', component: AdListComponent},
@@ -33,7 +34,8 @@ const appRoutes: Routes = [
 @NgModule({
   declarations: [
     AppComponent,
-    HeaderComponent
+    HeaderComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,
