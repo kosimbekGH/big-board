@@ -14,6 +14,8 @@ import { HeaderComponent } from './components/header/header.component';
 import { PersonalAreaComponent } from './pages/profile/components/personal-area/personal-area.component';
 import { FavoriteModule } from './pages/favorite/favorite.module';
 import { FavoriteComponent } from './pages/favorite/components/favorite/favorite.component';
+import { AdDetailComponent } from './pages/ad/components/ad-detail/ad-detail.component';
+import { AdFilterComponent } from './pages/ad/components/ad-filter/ad-filter.component';
 
 const appRoutes: Routes = [
   {path: '', component: AdListComponent},
@@ -22,7 +24,10 @@ const appRoutes: Routes = [
   {path: 'login', component: LoginComponent},
   {path: 'personal-area', component: PersonalAreaComponent},
   {path: 'favorite', component: FavoriteComponent},
-  {path: 'new-ad', component: NewAdComponent}
+  {path: 'new-ad', component: NewAdComponent},
+  {path: 'ad-detail', component: AdDetailComponent},
+  {path: 'ad-filter', component: AdFilterComponent},
+
 ]
 
 @NgModule({

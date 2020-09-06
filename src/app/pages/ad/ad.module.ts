@@ -2,8 +2,9 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { AdListComponent } from './components/ad-list/ad-list.component';
 import { AdSearchComponent } from './components/ad-search/ad-search.component';
-import { AddDetailComponent } from './components/add-detail/add-detail.component';
+import { AdDetailComponent } from './components/ad-detail/ad-detail.component';
 import { AdFilterComponent } from './components/ad-filter/ad-filter.component';
+import { RouterModule } from '@angular/router';
 
 
 
@@ -12,14 +13,15 @@ import { AdFilterComponent } from './components/ad-filter/ad-filter.component';
   declarations: [
     AdListComponent,
     AdSearchComponent,
-    AddDetailComponent,
+    AdDetailComponent,
     AdFilterComponent
   ],
   exports: [
     AdSearchComponent
   ],
-  imports: [
-    CommonModule
-  ]
+    imports: [
+      CommonModule,
+      RouterModule
+    ]
 })
 export class AdModule { }
