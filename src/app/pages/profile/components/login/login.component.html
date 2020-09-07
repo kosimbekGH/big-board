@@ -1,64 +1,63 @@
 <div class="container">
 
-  <div class="" >
+  <div class="">
     <h1><span (click)="hideReg()" class="cursor-pointer ">Регистрация/Войти</span></h1>
-<div>
+    <div>
 
-  <div *ngIf="hide; else showReg">
-  <form>
-    <div class="form-group pl-0 col-5">
-      <label>Как вас зовут?</label>
-      <input type="text" class="form-control" placeholder="Например: Андрей">
-    </div>
+      <div *ngIf="hide; else showReg">
+        <form>
+          <div class="form-group pl-0 col-5">
+            <label>Как вас зовут?</label>
+            <input type="text" class="form-control" placeholder="Например: Андрей">
+          </div>
 
-    <div class="form-group pl-0 col-5">
-      <label>Введите Email</label>
-      <input type="email" class="form-control" placeholder="example@mail.com">
-      <small class="form-text text-muted">Мы никогда никому не передадим вашу электронную почту.</small>
-    </div>
+          <div class="form-group pl-0 col-5">
+            <label>Введите Email</label>
+            <input type="email" class="form-control" placeholder="example@mail.com">
+            <small class="form-text text-muted">Мы никогда никому не передадим вашу электронную почту.</small>
+          </div>
 
-    <div class="form-group pl-0 col-5">
-      <label>Введите номер</label>
-      <input class="form-control" type="text" placeholder="Например: +(992) 92445181">
-    </div>
-
-
-    <div class="form-group pl-0 col-5">
-      <label>Пароль</label>
-      <input type="password" class="form-control">
-    </div>
+          <div class="form-group pl-0 col-5">
+            <label>Введите номер</label>
+            <input class="form-control" type="text" placeholder="Например: +(992) 92445181">
+          </div>
 
 
-    <div class="form-group pl-0 col-5">
-      <label>Подтвердите пароль</label>
-      <input type="password" class="form-control">
-    </div>
+          <div class="form-group pl-0 col-5">
+            <label>Пароль</label>
+            <input type="password" class="form-control">
+          </div>
 
 
-    <div class="form-group form-check ">
-      <input type="checkbox" class="form-check-input" id="exampleCheck1">
-      <label class="form-check-label text-muted" for="exampleCheck1">Регистрируясь, вы принимаете
-        <a href="/">Пользовательское соглашение</a> <br>и <a href="/">Конфиденциальность</a> на <a href="/">BigBoard.com</a></label>
-    </div>
-    <button type="submit" class="btn btn-primary">Регистрация</button>
-  </form>
-  </div>
+          <div class="form-group pl-0 col-5">
+            <label>Подтвердите пароль</label>
+            <input type="password" class="form-control">
+          </div>
 
-  <ng-template #showReg>
 
-    <div class="form-group pl-0 col-5">
-      <label>Введите Email или номер телефона</label>
-      <input type="email" class="form-control">
-    </div>
-
-      <div class="form-group pl-0 col-5">
-        <label>Введите пароль</label>
-        <input type="password" class="form-control">
+          <div class="form-group form-check ">
+            <input type="checkbox" class="form-check-input" id="exampleCheck1">
+            <label class="form-check-label text-muted" for="exampleCheck1">Регистрируясь, вы принимаете
+              <a href="/">Пользовательское соглашение</a> <br>и <a href="/">Конфиденциальность</a> на <a href="/">BigBoard.com</a></label>
+          </div>
+          <button type="submit" class="btn btn-primary">Регистрация</button>
+        </form>
       </div>
-    <button type="submit" class="btn btn-primary">Вход</button>
 
-  </ng-template>
+      <ng-template #showReg>
+
+        <div class="form-group pl-0 col-5">
+          <label>Введите Email или номер телефона</label>
+          <input type="email" class="form-control">
+        </div>
+
+        <div class="form-group pl-0 col-5">
+          <label>Введите пароль</label>
+          <input type="password" class="form-control">
+        </div>
+        <button type="submit" class="btn btn-primary">Вход</button>
+
+      </ng-template>
+    </div>
+  </div>
 </div>
-
-
-
