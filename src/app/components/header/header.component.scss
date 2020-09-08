@@ -1,19 +1,20 @@
 .header-text-color{
-  color: lightseagreen;
+  color: white;
   cursor: pointer;
 
 }
 .header-bg{
-  background-color: #f5f5f5 ;
+  background-color: lightseagreen ;
+
 }
 .active-link{
   color: #dc3545;
 }
 .title-hover {
-  border-bottom: 2px solid #f5f5f5;
+  border-bottom: 2px solid lightseagreen;
 
   &:hover {
-    border-color: lightseagreen;
+    border-color: white;
   }
 
 }
