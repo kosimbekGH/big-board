@@ -1,1 +1,85 @@
-<p>new-ad works!</p>
+<div class="container m-auto">
+  <h2 class="mt-3">Подача объявление</h2>
+
+  <div class="">
+    <div class="d-flex flex-column ">
+      <div class="row mt-4">
+        <label class="col-2 align-items-center">Категория:</label>
+        <select class="form-control col-3">
+          <option routerLink="/">Танспорт</option>
+          <option routerLink="/">Недвижимость</option>
+          <option routerLink="/">Электроника</option>
+          <option routerLink="/">Услуги</option>
+          <option routerLink="/">Работа</option>
+          <option routerLink="/">Животные</option>
+          <option routerLink="/">Бизнес</option>
+        </select>
+      </div>
+
+      <div class="row mt-4">
+        <label class="col-2 align-items-center">Состояние:</label>
+        <select class="form-control col-3">
+          <option routerLink="/">Новый</option>
+          <option routerLink="/">Б/У</option>
+        </select>
+      </div>
+
+      <div class="row mt-4">
+        <label class="form-group col-2 align-items-center">Цена:</label>
+        <span>
+        <input class="form-control  form-width" type="number  ">
+
+          <div class="form-group form-check d-flex justify-content-center form-width">
+      <label class="mr-3">торг
+        <input type="checkbox" class="">
+      </label>
+      <label class="">обмен
+        <input type="checkbox" class="">
+      </label>
+    </div>
+      </span>
+      </div>
+
+
+      <div class="row">
+        <label class="col-2 align-items-center">Описание:</label>
+        <textarea type="text" rows="4" class="form-control form-control col-3 resize">
+      </textarea>
+      </div>
+
+
+      <div class="row mt-4">
+        <label class="col-2 align-items-center">Город:</label>
+        <select class="form-control col-3">
+          <option routerLink="/">Худжанд</option>
+          <option routerLink="/">Душанбе</option>
+          <option routerLink="/">Чкаловск</option>
+          <option routerLink="/">Истаравшан</option>
+          <option routerLink="/">Другой</option>
+        </select>
+      </div>
+
+      <div class="row mt-4">
+        <label class="col-2 align-items-center">Имя:</label>
+        <input type="text" value="Абду" class="form-control col-3">
+      </div>
+
+      <div class="row mt-4">
+        <label class="col-2 align-items-center">Телефон:</label>
+        <input type="text" class="form-control col-3">
+      </div>
+
+      <div class="row mt-4">
+        <label class="col-2 align-items-center">E-mail:</label>
+        <input type="text" placeholder="example@gmail.com" class="form-control col-3">
+      </div>
+
+
+      <div class="">
+        <button class="btn btn-success btn-lg">
+          Опубликовать
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
