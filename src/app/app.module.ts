@@ -17,17 +17,19 @@ import { FavoriteComponent } from './pages/favorite/components/favorite/favorite
 import { AdDetailComponent } from './pages/ad/components/ad-detail/ad-detail.component';
 import { AdFilterComponent } from './pages/ad/components/ad-filter/ad-filter.component';
 import { FooterComponent } from './components/footer/footer.component';
+import { NgxMaskModule } from 'ngx-mask';
+import { AuthGuard } from './guards/auth.guard';
 
 const appRoutes: Routes = [
   {path: '', component: AdListComponent},
-  {path: 'ad-search', component: AdSearchComponent},
-  {path: 'new-ad', component: NewAdComponent},
   {path: 'login', component: LoginComponent},
-  {path: 'personal-area', component: PersonalAreaComponent},
-  {path: 'favorite', component: FavoriteComponent},
-  {path: 'new-ad', component: NewAdComponent},
+  {path: 'ad-search', component: AdSearchComponent},
+  {path: 'new-ad', component: NewAdComponent, canActivate: [AuthGuard]},
+  {path: 'personal-area', component: PersonalAreaComponent, canActivate: [AuthGuard]},
+  {path: 'favorite', component: FavoriteComponent, canActivate: [AuthGuard]},
   {path: 'ad-detail', component: AdDetailComponent},
   {path: 'ad-filter', component: AdFilterComponent},
+  {path: '**', redirectTo: '/', pathMatch: 'full'}
 
 ]
 
@@ -35,7 +37,7 @@ const appRoutes: Routes = [
   declarations: [
     AppComponent,
     HeaderComponent,
-    FooterComponent
+    FooterComponent,
   ],
   imports: [
     BrowserModule,
@@ -43,12 +45,12 @@ const appRoutes: Routes = [
     CreateAdModule,
     ProfileModule,
     FavoriteModule,
-    RouterModule.forRoot(appRoutes)
-
-
-
+    RouterModule.forRoot(appRoutes),
+    NgxMaskModule.forRoot()
   ],
-  providers: [],
+  providers: [
+    AuthGuard
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

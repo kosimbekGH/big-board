@@ -5,38 +5,44 @@
     <div>
 
       <div *ngIf="hide; else showReg">
-        <form>
+        <form [formGroup]="regForm" (submit)="onSubmit()">
           <div class="form-group pl-0 col-5">
             <label>Как вас зовут?</label>
-            <input type="text" class="form-control" placeholder="Например: Андрей">
+            <input type="text" class="form-control"
+                   placeholder="Например: Андрей"
+                   formControlName="name"
+                   [class.is-invalid]="submitted && f.name.invalid">
           </div>
 
-          <div class="form-group pl-0 col-5">
-            <label>Введите Email</label>
-            <input type="email" class="form-control" placeholder="example@mail.com">
-            <small class="form-text text-muted">Мы никогда никому не передадим вашу электронную почту.</small>
-          </div>
 
           <div class="form-group pl-0 col-5">
             <label>Введите номер</label>
-            <input class="form-control" type="text" placeholder="Например: +(992) 92445181">
+            <input class="form-control" prefix="+992"
+                   mask="(00)-000-00 00"
+                   formControlName="phoneNumber"
+                   [class.is-invalid]="(submitted && f.phoneNumber.invalid) || errorMessage">
+            <small class="form-text text-danger" *ngIf="errorMessage">{{errorMessage}}</small>
           </div>
 
 
           <div class="form-group pl-0 col-5">
             <label>Пароль</label>
-            <input type="password" class="form-control">
+            <input type="password" class="form-control"
+                   formControlName="password"
+                   [class.is-invalid]="submitted && f.password.invalid">
           </div>
 
 
           <div class="form-group pl-0 col-5">
             <label>Подтвердите пароль</label>
-            <input type="password" class="form-control">
+            <input type="password" class="form-control"
+                   formControlName="confirmPassword"
+                   [class.is-invalid]="submitted && f.confirmPassword.invalid">
           </div>
 
 
           <div class="form-group form-check ">
-            <input type="checkbox" class="form-check-input" id="exampleCheck1">
+            <input type="checkbox" class="form-check-input" id="exampleCheck1" formControlName="confidentiality">
             <label class="form-check-label text-muted" for="exampleCheck1">Регистрируясь, вы принимаете
               <a href="/">Пользовательское соглашение</a> <br>и <a href="/">Конфиденциальность</a> на <a href="/">BigBoard.com</a></label>
           </div>
@@ -46,19 +52,28 @@
 
       <ng-template #showReg>
 
-        <div class="form-group pl-0 col-5">
-          <label>Введите Email или номер телефона</label>
-          <input type="email" class="form-control">
-        </div>
+        <form [formGroup]="loginForm" (submit)="onSubmitLog()">
+          <div class="form-group pl-0 col-5">
+            <input class="form-control" prefix="+992 "
+                   mask="(00)-000-00 00"
+                   formControlName="phoneNumber"
+                   [class.is-invalid]="loginSubmitted && flog.phoneNumber.invalid">
 
-        <div class="form-group pl-0 col-5 ">
-          <label>Введите пароль</label>
-          <input type="password" class="form-control">
-        </div>
-        <div class="margin-30">
-          <button type="submit" class="btn btn-primary">Вход</button>
-        </div>
+          </div>
 
+          <div class="form-group pl-0 col-5">
+            <label>Пароль</label>
+            <input type="password" class="form-control"
+                   formControlName="password"
+                   [class.is-invalid]="loginSubmitted && flog.password.invalid">
+          </div>
+
+          <span class="text-danger d-block my-2" *ngIf="errorLoginMessage">{{errorLoginMessage}}</span>
+
+          <div class="margin-30">
+            <button type="submit" class="btn btn-primary">Вход</button>
+          </div>
+        </form>
       </ng-template>
     </div>
   </div>
