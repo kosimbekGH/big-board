@@ -5,6 +5,7 @@ import { AdSearchComponent } from './components/ad-search/ad-search.component';
 import { AdDetailComponent } from './components/ad-detail/ad-detail.component';
 import { AdFilterComponent } from './components/ad-filter/ad-filter.component';
 import { RouterModule } from '@angular/router';
+import { NgxMaskModule } from 'ngx-mask';
 
 
 
@@ -20,8 +21,9 @@ import { RouterModule } from '@angular/router';
     AdSearchComponent
   ],
     imports: [
-      CommonModule,
-      RouterModule
+        CommonModule,
+        RouterModule,
+        NgxMaskModule
     ]
 })
 export class AdModule { }

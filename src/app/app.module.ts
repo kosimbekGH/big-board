@@ -19,15 +19,16 @@ import { AdFilterComponent } from './pages/ad/components/ad-filter/ad-filter.com
 import { FooterComponent } from './components/footer/footer.component';
 import { NgxMaskModule } from 'ngx-mask';
 import { AuthGuard } from './guards/auth.guard';
+import { HttpClientModule } from '@angular/common/http';
 
 const appRoutes: Routes = [
   {path: '', component: AdListComponent},
   {path: 'login', component: LoginComponent},
   {path: 'ad-search', component: AdSearchComponent},
-  {path: 'new-ad', component: NewAdComponent, canActivate: [AuthGuard]},
+  {path: 'new-ad/:id', component: NewAdComponent, canActivate: [AuthGuard]},
   {path: 'personal-area', component: PersonalAreaComponent, canActivate: [AuthGuard]},
   {path: 'favorite', component: FavoriteComponent, canActivate: [AuthGuard]},
-  {path: 'ad-detail', component: AdDetailComponent},
+  {path: 'ad-detail/:id', component: AdDetailComponent},
   {path: 'ad-filter', component: AdFilterComponent},
   {path: '**', redirectTo: '/', pathMatch: 'full'}
 
@@ -42,6 +43,7 @@ const appRoutes: Routes = [
   imports: [
     BrowserModule,
     AdModule,
+    HttpClientModule,
     CreateAdModule,
     ProfileModule,
     FavoriteModule,

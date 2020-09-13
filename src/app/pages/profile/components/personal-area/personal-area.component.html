@@ -4,18 +4,18 @@
   </div>
 
   <div class="d-flex justify-content-around flex-wrap mt-3">
-    <div routerLink="/ad-detail"
-         class="card cursor-pointer mt-3"
+    <div class="card cursor-pointer mt-3"
          style="width: 18rem;"
-         *ngFor="let ad of ads | async">
-      <img src="../../../../../assets/img/1.jpg" class="card-img-top" alt="...">
+         *ngFor="let ad of ads | async"
+         [routerLink]="'/ad-detail/' + ad.id">
+      <img src="{{ad.image}}" class="card-img-top" alt="...">
       <div class="card-body">
         <h5 class="card-title">{{ad.title}} ({{ad.price}}смн)</h5>
-        <p>Lorem ipsum dolor sit amet.</p>
-        <p class="card-text text-muted">Опубликовано 11.10.2020, 15:04 </p>
+        <p>{{ad.description}}</p>
+        <p class="card-text text-muted">Опубликовано {{ad.created | date:'M.d.yy, H:mm'}} </p>
         <div class="d-flex justify-content-between">
-          <button routerLink="/" class="btn btn-warning">Изменить</button>
-          <button routerLink="/" class="btn btn-danger ">Удалить</button>
+          <button class="btn btn-warning" (click)="editAd($event, ad)">Изменить</button>
+          <button class="btn btn-danger" (click)="deleteAd(ad)">Удалить</button>
         </div>
       </div>
     </div>

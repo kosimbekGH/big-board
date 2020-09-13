@@ -72,7 +72,7 @@ export class LoginComponent implements OnInit {
 
   private createRegForm(): void {
     this.regForm = this.fb.group({
-      id: new Date().getTime(),
+      id: Date.now(),
       name: ['', Validators.required],
       phoneNumber: ['', Validators.required],
       password: ['', Validators.required],

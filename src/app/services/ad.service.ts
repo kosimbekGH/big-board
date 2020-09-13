@@ -15,11 +15,16 @@ export class AdService {
     return of(allAd);
   }
 
+  getOne(id: number): Observable<any> {
+    const getAllAds: any[] = JSON.parse(localStorage.getItem('Ads') || '[]');
+    const findAd = getAllAds.find(item => item.id == id);
+    return of(findAd);
+  }
+
   getMyAds(): Observable<any[]> {
     const user = JSON.parse(localStorage.getItem('UserData'));
     const allAd: any[] = JSON.parse(localStorage.getItem('Ads') || '[]');
-
-    return of(allAd.filter(item => item.id === user.id));
+    return of(allAd.filter(item => item.userId === user.id));
   }
 
   create(ad: string): Observable<any> {
@@ -40,12 +45,13 @@ export class AdService {
     }
   }
 
-  delete(adId: string): Observable<any> {
+  delete(adId: number): Observable<any> {
     const allAd: any[] = JSON.parse(localStorage.getItem('Ads') || '[]');
     const findAdIndex = allAd.findIndex(item => item.id === adId);
 
     if (findAdIndex !== -1) {
       allAd.splice(findAdIndex, 1);
+      localStorage.setItem('Ads', JSON.stringify(allAd));
       return of(true);
     }
   }
