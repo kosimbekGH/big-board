@@ -42,7 +42,8 @@ export class NewAdComponent implements OnInit {
       description: ['', Validators.required],
       city: ['', Validators.required],
       created: new Date(),
-      image: ''
+      image: '',
+      adStatus: 0
     });
 
     if (this.id !== 'new') {

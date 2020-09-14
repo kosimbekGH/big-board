@@ -59,4 +59,15 @@ export class ProfileService {
     localStorage.removeItem('UserData');
     this.router.navigate(['/login']);
   }
+
+  updateUser(user: any): Observable<any> {
+    const allUsers: any[] = this.getUsers();
+    const findCurrentUser = allUsers.findIndex(item => item.id === user.id);
+
+    if (findCurrentUser !== -1) {
+      allUsers[findCurrentUser] = user;
+      localStorage.setItem('users', JSON.stringify(allUsers));
+      return of(user);
+    }
+  }
 }

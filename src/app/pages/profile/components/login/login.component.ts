@@ -77,7 +77,8 @@ export class LoginComponent implements OnInit {
       phoneNumber: ['', Validators.required],
       password: ['', Validators.required],
       confirmPassword: ['', Validators.required],
-      confidentiality: [false, Validators.required]
+      confidentiality: [false, Validators.required],
+      role: 0
     });
   }
 }

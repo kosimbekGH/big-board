@@ -15,6 +15,12 @@ export class AdService {
     return of(allAd);
   }
 
+  getSuccessAds(): Observable<any[]> {
+    const allAd: any[] = JSON.parse(localStorage.getItem('Ads') || '[]');
+    const successAds: any[] = allAd.filter(item => item.adStatus === 1);
+    return of(successAds);
+  }
+
   getOne(id: number): Observable<any> {
     const getAllAds: any[] = JSON.parse(localStorage.getItem('Ads') || '[]');
     const findAd = getAllAds.find(item => item.id == id);

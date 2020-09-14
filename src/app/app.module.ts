@@ -20,6 +20,10 @@ import { FooterComponent } from './components/footer/footer.component';
 import { NgxMaskModule } from 'ngx-mask';
 import { AuthGuard } from './guards/auth.guard';
 import { HttpClientModule } from '@angular/common/http';
+import { AdminModule } from './admin/admin.module';
+import { AdminComponent } from './admin/components/admin.component';
+import { AdsComponent } from './admin/components/ads/ads.component';
+
 
 const appRoutes: Routes = [
   {path: '', component: AdListComponent},
@@ -30,6 +34,8 @@ const appRoutes: Routes = [
   {path: 'favorite', component: FavoriteComponent, canActivate: [AuthGuard]},
   {path: 'ad-detail/:id', component: AdDetailComponent},
   {path: 'ad-filter', component: AdFilterComponent},
+  {path: 'admin', component: AdminComponent},
+  {path: 'admin/ads', component: AdsComponent},
   {path: '**', redirectTo: '/', pathMatch: 'full'}
 
 ]
@@ -47,6 +53,7 @@ const appRoutes: Routes = [
     CreateAdModule,
     ProfileModule,
     FavoriteModule,
+    AdminModule,
     RouterModule.forRoot(appRoutes),
     NgxMaskModule.forRoot()
   ],

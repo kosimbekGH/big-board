@@ -1,0 +1,20 @@
+<div class="container">
+
+  <button class="btn btn-primary mr-2" routerLink="/admin">Пользователи</button>
+  <button class="btn btn-primary" routerLink="/admin/ads">Все объявление</button>
+
+  <h2 class="mb-3 mt-3">Список зарегистрированных пользователей</h2>
+
+  <div class="row border justify-content-between p-3 list-user-color mb-3"
+       *ngFor="let user of users">
+    <h4 class="col-6 text-white">+992 {{user.phoneNumber | mask: '(00) 000-00-00'}}</h4>
+    <button class="btn btn-success col-2"
+            *ngIf="user.role === 0"
+            (click)="changeUserRole(user, 1)">Сделать админом
+    </button>
+    <button class="btn btn-danger col-2"
+            *ngIf="user.role === 1"
+            (click)="changeUserRole(user, 0)">Убрать из админа
+    </button>
+  </div>
+</div>

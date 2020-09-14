@@ -12,6 +12,8 @@
       <div class="card-body">
         <h5 class="card-title">{{ad.title}} ({{ad.price}}смн)</h5>
         <p>{{ad.description}}</p>
+        <span class="badge badge-danger" *ngIf="ad.adStatus === 2">Отклонено</span>
+        <span class="badge badge-success" *ngIf="ad.adStatus === 0">Проверяется</span>
         <p class="card-text text-muted">Опубликовано {{ad.created | date:'M.d.yy, H:mm'}} </p>
         <div class="d-flex justify-content-between">
           <button class="btn btn-warning" (click)="editAd($event, ad)">Изменить</button>

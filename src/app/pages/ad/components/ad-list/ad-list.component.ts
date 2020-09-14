@@ -16,7 +16,7 @@ export class AdListComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    this.ads$ = this.adService.getAll();
+    this.ads$ = this.adService.getSuccessAds();
   }
 
 }
