@@ -1,7 +1,7 @@
 <div class="container" *ngIf="ad">
 
   <section>
-    <h1>Имя объявления</h1>
+    <h1>{{ad.title}}</h1>
     <span class="text-muted">{{ad.city}}</span>
     <div class="d-flex justify-content-between section-width">
       <span class="pl-0 ">{{ad.created | date:'M.d.yy, H:mm'}}</span>
