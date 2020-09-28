@@ -1,9 +1,11 @@
 <div class="container">
 
-  <button class="btn btn-primary mr-2" routerLink="/admin">Пользователи</button>
-  <button class="btn btn-primary" routerLink="/admin/ads">Все объявление</button>
+  <div class="d-flex justify-content-between mt-3 mb-3">
+    <h2>Список зарегистрированных пользователей</h2>
 
-  <h2 class="mb-3 mt-3">Список зарегистрированных пользователей</h2>
+    <button class="btn btn-outline-warning mr-2" routerLink="/admin">Пользователи</button>
+    <button class="btn btn-outline-success" routerLink="/admin/ads">Все объявление</button>
+  </div>
 
   <div class="row border justify-content-between p-3 list-user-color mb-3"
        *ngFor="let user of users">

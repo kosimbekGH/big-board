@@ -22,7 +22,7 @@
     <span class=" text-decoration-none header-text-color "
           *ngIf="isAuth && user?.role === 0">+992 {{user?.phoneNumber | mask: '(00) 000-00-00'}}</span>
 
-    <button class="btn btn-primary"
+    <button class="btn btn-dark"
             *ngIf="isAuth && user?.role === 1"
             routerLink="/admin">Панель управления
     </button>
