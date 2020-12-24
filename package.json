@@ -20,7 +20,7 @@
     "@angular/platform-browser-dynamic": "~10.0.9",
     "@angular/router": "~10.0.9",
     "awesome": "0.0.7",
-    "bootstrap": "^4.5.2",
+    "bootstrap": "^4.5.3",
     "font": "0.0.4",
     "font-awesome": "^4.7.0",
     "ngx-mask": "^10.0.1",
