@@ -1,17 +1,18 @@
 <div class="d-flex search-background">
 <div class="col-12 col-sm-3"></div>
   <div class="input-group col-12 col-sm-5">
-    <input type="search" class="form-control col-8" placeholder="Я ищу..." >
+    <input (keyup.enter)="onSearch()"
+           [formControl]="searchControl"
+           class="form-control col-8"
+           placeholder="Я ищу..."
+           type="search">
     <select class="form-control col-4">
-      <option routerLink="/">Все города</option>
-      <option routerLink="/">Худжанд</option>
-      <option routerLink="/">Душанбе</option>
-      <option routerLink="/">Бустон</option>
+      <option routerLink="/" *ngFor="let category of categories; let idx = index">{{categories[idx]}}</option>
     </select>
   </div>
 
-  <div routerLink="/ad-filter" class="col-12 col-sm-2">
-    <button class="btn btn-warning">
+  <div class="col-12 col-sm-2">
+    <button class="btn btn-warning" (click)="onSearch()">
       <span class="fa fa-search mr-2"></span>
       Найти
     </button>

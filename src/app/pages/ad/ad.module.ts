@@ -6,6 +6,7 @@ import { AdDetailComponent } from './components/ad-detail/ad-detail.component';
 import { AdFilterComponent } from './components/ad-filter/ad-filter.component';
 import { RouterModule } from '@angular/router';
 import { NgxMaskModule } from 'ngx-mask';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 
 
@@ -23,7 +24,9 @@ import { NgxMaskModule } from 'ngx-mask';
     imports: [
         CommonModule,
         RouterModule,
-        NgxMaskModule
+        NgxMaskModule,
+        ReactiveFormsModule,
+        FormsModule
     ]
 })
 export class AdModule { }

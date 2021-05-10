@@ -23,6 +23,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { AdminModule } from './admin/admin.module';
 import { AdminComponent } from './admin/components/admin.component';
 import { AdsComponent } from './admin/components/ads/ads.component';
+import { TransportComponent } from './pages/transport/transport.component';
 
 
 const appRoutes: Routes = [
@@ -36,15 +37,17 @@ const appRoutes: Routes = [
   {path: 'ad-filter', component: AdFilterComponent},
   {path: 'admin', component: AdminComponent},
   {path: 'admin/ads', component: AdsComponent},
+  {path: 'transport', component: TransportComponent},
   {path: '**', redirectTo: '/', pathMatch: 'full'}
 
-]
+];
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
     FooterComponent,
+    TransportComponent,
   ],
   imports: [
     BrowserModule,
